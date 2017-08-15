@@ -20,6 +20,8 @@ public class InitializeHexagonGridSystem : IInitializeSystem
                 var entity = m_contexts.game.CreateEntity();
                 entity.AddPosition(new IntVector2(i,j));
                 entity.isHexagon = true;
+                entity.AddHexagonType(HexagonType.Empty);
+                entity.AddHexagonRotation(0);
             }
         }
     }

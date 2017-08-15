@@ -8,25 +8,37 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Globals = 0;
-    public const int Hexagon = 1;
-    public const int Position = 2;
-    public const int UIRoot = 3;
-    public const int View = 4;
+    public const int ButtonNumber = 0;
+    public const int ClickInput = 1;
+    public const int Globals = 2;
+    public const int Hexagon = 3;
+    public const int HexagonRotation = 4;
+    public const int HexagonType = 5;
+    public const int Position = 6;
+    public const int UIRoot = 7;
+    public const int View = 8;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 9;
 
     public static readonly string[] componentNames = {
+        "ButtonNumber",
+        "ClickInput",
         "Globals",
         "Hexagon",
+        "HexagonRotation",
+        "HexagonType",
         "Position",
         "UIRoot",
         "View"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(ButtonNumberComponent),
+        typeof(ClickInputComponent),
         typeof(GlobalsComponent),
         typeof(HexagonComponent),
+        typeof(HexagonRotationComponent),
+        typeof(HexagonTypeComponent),
         typeof(PositionComponent),
         typeof(UIRootComponent),
         typeof(ViewComponent)

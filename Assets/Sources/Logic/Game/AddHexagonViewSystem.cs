@@ -12,10 +12,8 @@ public class AddHexagonViewSystem : ReactiveSystem<GameEntity>
         m_contexts = contexts;
         m_gridSize = gridSize;
     }
-
     protected override void Execute(List<GameEntity> entities)
     {
-
         var hexagonPrefab = m_contexts.game.globals.value.hexagonPrefab;
         var uiRoot = m_contexts.game.uIRoot.value;
         var globals = m_contexts.game.globals.value;
@@ -36,7 +34,9 @@ public class AddHexagonViewSystem : ReactiveSystem<GameEntity>
                 pos.y += globals.heightOffset;
                 image.color = globals.oddColor;
             }
+            hexagon.gameObject.SetActive(true);
             rectTransform.anchoredPosition = pos;
+            //Debug.Log("adding view");
         }
     }
 
