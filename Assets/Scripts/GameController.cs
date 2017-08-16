@@ -8,7 +8,6 @@ public class GameController : MonoBehaviour
 {
     public Globals globals;
     public RectTransform uiRoot;
-
     private Systems m_systems;
     // Use this for initialization
     void Start()
@@ -24,14 +23,16 @@ public class GameController : MonoBehaviour
     {
         return new Feature("Game")
             .Add(new InitializeHexagonGridSystem(contexts, globals.gridSize))
-           
+
             .Add(new ClickInputSystem(contexts))
             .Add(new ChangeHexagonTypeSystem(contexts))
             .Add(new RotateHexagonSystem(contexts))
             .Add(new RotateHexagonViewSystem(contexts))
 
             .Add(new AddHexagonViewSystem(contexts, globals.gridSize))
-            .Add(new DispalyHexagonTypeSystem(contexts));
+            .Add(new DispalyHexagonTypeSystem(contexts))
+
+            .Add(new DestroyGameEntitySystem(contexts));
 
     }
 
